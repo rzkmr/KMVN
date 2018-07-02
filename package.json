@@ -1,0 +1,14 @@
+{
+    "name": "kmvn",
+    "version": "1.0.0",
+    "description": "Koa Mongo Vue Node",
+    "main": "index.js",
+    "author": "rzkmr",
+    "license": "MIT",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "dependencies": {
+        "koa": "^2.5.1"
+    }
+}
