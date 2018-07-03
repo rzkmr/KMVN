@@ -6,9 +6,36 @@
     "author": "rzkmr",
     "license": "MIT",
     "scripts": {
-        "start": "node index.js"
+        "start": "node dist/index.js",
+        "build": "rimraf dist && cross-env NODE_ENV=production babel src -d dist -s",
+        "dev": "nodemon src/index.js"
     },
     "dependencies": {
         "koa": "^2.5.1"
+    },
+    "devDependencies": {
+        "babel-cli": "^6.26.0",
+        "babel-preset-env": "^1.7.0",
+        "cross-env": "^5.2.0",
+        "nodemon": "^1.17.5",
+        "rimraf": "^2.6.2"
+    },
+    "nodemonConfig": {
+        "execMap": {
+            "js": "babel-node"
+        }
+    },
+    "babel": {
+        "sourceMap": "both",
+        "presets": [
+            [
+                "env",
+                {
+                    "targets": {
+                        "node": "current"
+                    }
+                }
+            ]
+        ]
     }
 }
